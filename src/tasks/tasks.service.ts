@@ -14,7 +14,7 @@ export class TasksService {
 
   getSingleTask(id: string): Task | NotFoundException {
     const task = this.tasks.find((element) => element.id === id);
-    if (!task) return new NotFoundException('The Task Not Exists');
+    if (!task) throw new NotFoundException('The Task Not Exists');
     return task;
   }
 
